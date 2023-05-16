@@ -6,11 +6,10 @@ const Sobre = () => {
   return (
     <section>
       <Titulo fontSize={16}>Sobre mim</Titulo>
-      <Paragrafo tipo="secundario">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quasi
-        eaque eos facilis perferendis, ut autem ex tempore consequatur rem
-        deserunt dolorum consequuntur nulla est modi, quaerat iusto maxime.
-        Praesentium.
+      <Paragrafo tipo="principal">
+        Atualmente meu foco é no Desenvolvimento Web Front-end, desenvolvendo
+        aplicações web responsivas com as tecnologias mais atualizadas do
+        mercado, tendo como meta tornar-me Fullstack.
       </Paragrafo>
       <GithubSecao>
         <img src="https://github-readme-stats.vercel.app/api?username=alvesgabrieel&show_icons=true&theme=dracula&include_all_commits=true&count_private=true" />
