@@ -19,6 +19,11 @@ const EstiloGlobal = createGlobalStyle`
       padding-top: 16px;
     }
   }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
 `
 
 export default EstiloGlobal

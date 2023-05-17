@@ -6,10 +6,24 @@ import Sobre from './containers/Sobre'
 import Projetos from './containers/Projetos'
 import temaLight from './themes/light'
 import temaDark from './themes/dark'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+export type Repository = {
+  id: string
+  name: string
+  language: string
+  html_url: string
+}
 
 function App() {
   const [usandoTemaDark, setUsandoTemaDark] = useState(true)
+  const [repositories, setRepositories] = useState<Repository[]>([])
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/alvesgabrieel/repos')
+      .then((response) => response.json())
+      .then((data) => setRepositories(data))
+  }, [])
 
   const handlerTema = () => {
     setUsandoTemaDark(!usandoTemaDark)
@@ -22,7 +36,7 @@ function App() {
         <Sidebar trocaTema={handlerTema} />
         <main>
           <Sobre />
-          <Projetos />
+          <Projetos repositorios={repositories} />
         </main>
       </Container>
     </ThemeProvider>
